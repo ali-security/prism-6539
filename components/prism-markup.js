@@ -1,5 +1,5 @@
 Prism.languages.markup = {
-	'comment': /<!--[\s\S]*?-->/,
+	'comment': /<!--(?:(?!<!--)[\s\S])*?-->/,
 	'prolog': /<\?[\s\S]+?\?>/,
 	'doctype': /<!DOCTYPE[\s\S]+?>/i,
 	'cdata': /<!\[CDATA\[[\s\S]*?]]>/i,
