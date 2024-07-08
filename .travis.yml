@@ -7,8 +7,6 @@ branches:
   only:
   - gh-pages
   - /.*/
-before_install:
-- npm i -g npm@latest
 install:
 - npm ci
 before_script:
