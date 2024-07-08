@@ -81,7 +81,9 @@ Prism.hooks.add('before-insert', function (env) {
 	var codeLines = env.highlightedCode.split('\n');
 	for (var i = 0, l = (commandLine.outputLines || []).length; i < l; i++) {
 		if (commandLine.outputLines.hasOwnProperty(i)) {
-			codeLines[i] = commandLine.outputLines[i];
+			// outputLines were removed from codeLines so missed out on escaping
+			// of markup so do it here.
+			codeLines[i] = Prism.util.encode(outputLines[i]);
 		}
 	}
 	env.highlightedCode = codeLines.join('\n');
